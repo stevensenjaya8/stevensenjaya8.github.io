@@ -1,334 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal Portfolio of Steven Senjaya">
-    <title>Steven Senjaya - Portfolio</title>
-    <style>
-        /* Reset some default browser styling */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-    }
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Steven Senjaya - Personal Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Steven Senjaya</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    body {
-        line-height: 1.6;
-        background-color: #f4f4f4;
-        color: #333;
-    }
+    <!-- Hero Section -->
+    <div class="bg-dark text-white text-center py-5">
+      <div class="container">
+        <h1 class="display-4">Hello, I'm Steven Senjaya</h1>
+        <img src="steven.jpeg" alt="Steven Senjaya" class="rounded-circle my-4" height="200">
+        <p class="lead">Teacher | Mentor | Lifelong Learner</p>
+      </div>
+    </div>
 
-    header {
-        background-color: #333;
-        color: #fff;
-        padding: 1rem 0;
-    }
+    <!-- About Section -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">About Me</h2>
+        <p class="text-center">I am Steven Senjaya, a passionate teacher dedicated to empowering students through education and fostering a love for learning. With a knack for simplifying complex concepts, I create engaging lessons that inspire creativity and critical thinking.</p>
+      </div>
+    </section>
 
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 1rem;
-    }
-
-    nav h1 {
-        font-size: 1.5rem;
-    }
-
-    nav ul {
-        list-style: none;
-        display: flex;
-    }
-
-    nav ul li {
-        margin-left: 1rem;
-    }
-
-    nav ul li a {
-        color: #fff;
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        transition: background-color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-        background-color: #555;
-        border-radius: 5px;
-    }
-
-    main {
-        max-width: 1100px;
-        margin: 2rem auto;
-        padding: 0 1rem;
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding: 2rem;
-    }
-
-    section {
-        margin-bottom: 2rem;
-    }
-
-    h2 {
-        margin-bottom: 1rem;
-        border-bottom: 2px solid #333;
-        padding-bottom: 0.5rem;
-    }
-
-    .project-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-    }
-
-    .project {
-        background-color: #f9f9f9;
-        padding: 1rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    footer {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 1rem 0;
-    }
-
-    footer p, footer a {
-        margin: 0.5rem 0;
-    }
-
-    footer a {
-        color: #fff;
-        text-decoration: none;
-    }
-
-    footer a:hover {
-        text-decoration: underline;
-    }
-
-    /* Add this CSS for the image styling */
-    .about-content {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-    }
-
-    .profile-image {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        object-fit: cover;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .slideshow {
-        position: relative;
-        max-width: 100%;
-        height: 300px;
-        margin-bottom: 2rem;
-        overflow: hidden;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .slide {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: none;
-    }
-
-    .prev, .next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: #fff;
-        border: none;
-        padding: 0.5rem;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-
-    .prev {
-        left: 10px;
-    }
-
-    .next {
-        right: 10px;
-    }
-
-    .prev:hover, .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    #contactForm {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        max-width: 500px;
-        margin: 0 auto;
-    }
-
-    #contactForm div {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #contactForm label {
-        margin-bottom: 0.5rem;
-        font-weight: bold;
-    }
-
-    #contactForm input, #contactForm textarea {
-        padding: 0.5rem;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        font-size: 1rem;
-    }
-
-    #contactForm button {
-        background-color: #333;
-        color: #fff;
-        padding: 0.75rem;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    #contactForm button:hover {
-        background-color: #555;
-    }
-
-    #contact p {
-    margin-bottom: 1.5rem; /* Adjust the value to increase or decrease spacing */
-    }
-
-
-    </style>
-</head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <nav>
-            <h1>Steven Senjaya</h1>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Main Content Area -->
-    <main>
-        <!-- About Section -->
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <img src="steven.jpeg" alt="Steven Senjaya" class="profile-image">
-                <p>Hi, I'm Steven Senjaya, I am a teacher. I love teaching because it's my passion.</p>
+    <!-- Teaching Experience Section -->
+    <section id="experience" class="bg-light py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Teaching Experience</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-3 text-center">
+              <img src="telc.jpeg" class="card-img-top p-3" alt="TELC Logo">
+              <div class="card-body">
+                <h5 class="card-title">TELC</h5>
+                <p class="card-text">My first teaching position, where I gained foundational experience in education.</p>
+              </div>
             </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="slideshow">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNmJ3ymPIMejOylqT8jBFrSZW2IHopkXctTg&s" alt="Project 1" class="slide" style="display: block;">
-                <img src="https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png" alt="Project 2" class="slide">
-                <img src="https://img.freepik.com/free-photo/beautiful-mountains-landscape_23-2150787888.jpg" alt="Project 3" class="slide">
-                <!-- Add more images as needed -->
-                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-3 text-center">
+              <img src="timedoor.png" class="card-img-top p-3" alt="Timedoor Logo">
+              <div class="card-body">
+                <h5 class="card-title">Timedoor</h5>
+                <p class="card-text">Developed engaging coding lessons for children and teenagers.</p>
+              </div>
             </div>
-            <div class="project-list">
-                <article class="project">
-                    <h3>Project 1</h3>
-                    <p>Description of your project. What problem did you solve? What technology did you use?</p>
-                </article>
-                <article class="project">
-                    <h3>Project 2</h3>
-                    <p>Description of another project. Include links if possible.</p>
-                </article>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-3 text-center">
+              <img src="brightchamps.jpeg" class="card-img-top p-3" alt="BrightCHAMPS Logo">
+              <div class="card-body">
+                <h5 class="card-title">BrightCHAMPS</h5>
+                <p class="card-text">Introduced innovative methods to teach STEM subjects to young learners.</p>
+              </div>
             </div>
-        </section>
-        
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>If you'd like to get in touch, fill out the form below:</p>
-            <form id="contactForm" onsubmit="return validateForm()">
-                <div>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                </div>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-                </div>
-                <div>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-3 text-center">
+              <img src="kodingnext.jpeg" class="card-img-top p-3" alt="Koding Next Logo">
+              <div class="card-body">
+                <h5 class="card-title">Koding Next</h5>
+                <p class="card-text">Mentored students in web development and advanced coding topics.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-3 text-center">
+              <img src="stellamaris.jpeg" class="card-img-top p-3" alt="Stella Maris Logo">
+              <div class="card-body">
+                <h5 class="card-title">Stella Maris International</h5>
+                <p class="card-text">First experience of teaching in an international school.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-3 text-center">
+              <img src="kgs.jpg" class="card-img-top p-3" alt="KGS Logo">
+              <div class="card-body">
+                <h5 class="card-title">Kanaan Global School</h5>
+                <p class="card-text">Teaching ICT to inspire the next generation of innovators.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 Steven S - All rights reserved.</p>
-        <p><a href="https://www.linkedin.com/in/steven-senjaya/" target="_blank">LinkedIn</a> | <a href="https://github.com/yourprofile" target="_blank">GitHub</a></p>
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Contact Me</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <form action="https://formspree.io/f/movqwgvp" method="POST">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-dark w-100">Send</button>
+              </form>
+              
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+      <p class="mb-0">© 2024 Steven Senjaya | All Rights Reserved</p>
     </footer>
 
-    <script>
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-    
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.display = (i === index) ? 'block' : 'none';
-            });
-        }
-    
-        function changeSlide(direction) {
-            slideIndex = (slideIndex + direction + slides.length) % slides.length;
-            showSlide(slideIndex);
-        }
-    
-        // Auto-play the slideshow (optional)
-        function autoPlay() {
-            changeSlide(1);
-            setTimeout(autoPlay, 3000); // Change image every 3 seconds
-        }
-    
-        // Initialize the first slide and auto-play
-        showSlide(slideIndex);
-        autoPlay();
-
-        function validateForm() {
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
-
-        if (name === '' || email === '' || message === '') {
-            alert('Please fill in all fields before submitting.');
-            return false; // Prevent form submission
-        }
-
-        alert('Thank you for your message!');
-        return true; // Allow form submission
-    }
-    </script>
-    
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
 </html>

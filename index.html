@@ -4,19 +4,50 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Steven Senjaya - Personal Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .hero-img {
+        height: 180px;
+        width: 180px;
+        object-fit: cover;
+        border: 4px solid #fff;
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      }
+      .card-img-top {
+        height: 120px;
+        object-fit: contain;
+        background-color: #f8f9fa;
+      }
+      .nav-link.active {
+        font-weight: bold;
+        color: #f8f9fa !important;
+      }
+      .footer-icons a {
+        color: white;
+        margin: 0 8px;
+        text-decoration: none;
+      }
+      .footer-icons a:hover {
+        color: #ccc;
+      }
+    </style>
   </head>
-  <body>
+  <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
         <a class="navbar-brand" href="#">Steven Senjaya</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
             <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
@@ -25,29 +56,31 @@
     </nav>
 
     <!-- Hero Section -->
-    <div class="bg-dark text-white text-center py-5">
+    <header class="bg-dark text-white text-center py-5">
       <div class="container">
-        <h1 class="display-4">Hello, I'm Steven Senjaya</h1>
-        <img src="steven.jpeg" alt="Steven Senjaya" class="rounded-circle my-4" height="200">
-        <p class="lead">Teacher | Mentor | Lifelong Learner</p>
+        <h1 class="display-4 mb-3" data-aos="zoom-in" data-aos-duration="800">Hello, I'm Steven Senjaya</h1>
+        <img src="steven.jpeg" alt="Steven Senjaya" class="hero-img rounded-circle mb-3" data-aos="fade-down" data-aos-duration="1000">
+        <p class="lead" data-aos="fade-up" data-aos-delay="200">Teacher • Mentor • Lifelong Learner</p>
       </div>
-    </div>
+    </header>
 
     <!-- About Section -->
-    <section id="about" class="py-5">
+    <section id="about" class="py-5" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <div class="container">
         <h2 class="text-center mb-4">About Me</h2>
-        <p class="text-center">I am Steven Senjaya, a passionate teacher dedicated to empowering students through education and fostering a love for learning. With a knack for simplifying complex concepts, I create engaging lessons that inspire creativity and critical thinking.</p>
+        <p class="text-center col-md-8 mx-auto" data-aos="fade-up" data-aos-delay="100">
+          I'm a passionate educator who loves making complicated things simple. I strive to inspire students to explore, question, and create—whether it's in coding, tech, or life itself.
+        </p>
       </div>
     </section>
 
-    <!-- Teaching Experience Section -->
-    <section id="experience" class="bg-light py-5">
+    <!-- Experience Section -->
+    <section id="experience" class="bg-light py-5" data-aos="fade-up">
       <div class="container">
-        <h2 class="text-center mb-4">Teaching Experience</h2>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card mb-3 text-center">
+        <h2 class="text-center mb-5">Teaching Experience</h2>
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="0">
+            <div class="card h-100 text-center shadow-sm">
               <img src="telc.jpeg" class="card-img-top p-3" alt="TELC Logo">
               <div class="card-body">
                 <h5 class="card-title">TELC</h5>
@@ -55,8 +88,8 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card mb-3 text-center">
+          <div class="col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card h-100 text-center shadow-sm">
               <img src="timedoor.png" class="card-img-top p-3" alt="Timedoor Logo">
               <div class="card-body">
                 <h5 class="card-title">Timedoor</h5>
@@ -64,8 +97,8 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card mb-3 text-center">
+          <div class="col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card h-100 text-center shadow-sm">
               <img src="brightchamps.jpeg" class="card-img-top p-3" alt="BrightCHAMPS Logo">
               <div class="card-body">
                 <h5 class="card-title">BrightCHAMPS</h5>
@@ -73,8 +106,8 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card mb-3 text-center">
+          <div class="col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="card h-100 text-center shadow-sm">
               <img src="kodingnext.jpeg" class="card-img-top p-3" alt="Koding Next Logo">
               <div class="card-body">
                 <h5 class="card-title">Koding Next</h5>
@@ -82,8 +115,8 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card mb-3 text-center">
+          <div class="col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
+            <div class="card h-100 text-center shadow-sm">
               <img src="stellamaris.jpeg" class="card-img-top p-3" alt="Stella Maris Logo">
               <div class="card-body">
                 <h5 class="card-title">Stella Maris International</h5>
@@ -91,8 +124,8 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card mb-3 text-center">
+          <div class="col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="500">
+            <div class="card h-100 text-center shadow-sm">
               <img src="kgs.jpg" class="card-img-top p-3" alt="KGS Logo">
               <div class="card-body">
                 <h5 class="card-title">Kanaan Global School</h5>
@@ -105,37 +138,51 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5">
+    <section id="contact" class="py-5" data-aos="fade-up">
       <div class="container">
         <h2 class="text-center mb-4">Contact Me</h2>
         <div class="row justify-content-center">
-          <div class="col-md-6">
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
             <form action="https://formspree.io/f/movqwgvp" method="POST">
-                <div class="mb-3">
-                  <label for="name" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
-                </div>
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-                <div class="mb-3">
-                  <label for="message" class="form-label">Message</label>
-                  <textarea class="form-control" id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-dark w-100">Send</button>
-              </form>
-              
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Enter your message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-dark w-100">Send Message</button>
+            </form>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-      <p class="mb-0">© 2024 Steven Senjaya | All Rights Reserved</p>
+    <footer class="bg-dark text-white text-center py-4" data-aos="fade-up" data-aos-duration="1000">
+      <p class="mb-2">© 2024 Steven Senjaya | All Rights Reserved</p>
+      <div class="footer-icons">
+        <a href="https://www.linkedin.com/in/steven-senjaya/" target="_blank">LinkedIn</a>
+        <a href="mailto:stevensenjaya8@gmail.com">Email</a>
+        <a href="https://www.youtube.com/@StevenSenjaya">YouTube</a>
+        <a href="https://www.instagram.com/stevensenjaya8"> Instagram </a>
+        <a href="https://www.tiktok.com/@stevensenjaya8"> TikTok </a>
+      </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        duration: 800,
+        offset: 100,
+      });
+    </script>
   </body>
 </html>
